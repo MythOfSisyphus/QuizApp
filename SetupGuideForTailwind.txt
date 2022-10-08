@@ -1,0 +1,22 @@
+First Make anyfile of HTML.
+Open Terminal
+Run following commands one by one :
+    npm init -y
+    npm install -D tailwindcss postcss autoprefixer vite
+    npx tailwindcss init -p 
+Open 'tailwind.config.js' and type "*" in 'content'. Then Save and Close
+Opne 'package.json' replace 'test' with 'start' and line before 'test' by 'vite'. Save and Close
+Make any file of CSS and paste this code : 
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+Now You Rock XD 
+type HTML Code in your HTML file and save it and run a command: 
+    npm run start
+Now follow the link that has been generated. And Make website. 
+
+//-----------------------------------------------------
+FontAwesome's jsCDN :
+<script src="https://use.fontawesome.com/7df851cac3.js"></script>
+

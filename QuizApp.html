@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="input.css">
+    <style>
+        .active {
+             background-color: black;
+             color: white;
+        }
+    </style>
+</head>
+<body>
+    <section class="px-3">
+        <!-- Header -->
+        <header>
+            <!-- Brand Name -->
+            <div id="brand">
+                <h1 class="text-3xl font-semibold"><span class="text-red-500">Newton</span><span class="relative text-xl">.net</span></h1>
+            </div>
+    
+            <!-- Menu items -->
+            <div id="menu-item" class="bg-[#cecaca] font-semibold my-5 flex space-x-6">
+                <div id="about" class="active menu-item px-2 py-[2px]">About</div>
+                <div id="math" class="menu-item px-2 py-[2px]">Maths</div>
+                <div id="phy" class="menu-item px-2 py-[2px]">Physics</div>
+                <div id="history" class="menu-item px-2 py-[2px]">Historical</div>
+            </div>
+        </header>
+        
+    </section>
+
+    <script>
+        let about = document.querySelector("#about"),
+        math = document.querySelector("#math"),
+        phy = document.querySelector("#phy"),
+        history = document.querySelector("#history");
+
+        let menuItem = document.querySelectorAll(".menu-item");
+        console.log(menuItem);
+
+        
+
+        // Math's quiz question & answer
+        let Math = [
+            {
+                question: "Sir Issac Newton was born in ?",
+                option1 : 1400,
+                option2 : 1642,
+                option3 : 1726,
+                option4 : 1889,
+                Correct : 1642,
+            },
+            {
+                question: "Sum of first 100 natural number which are divisible by 7?",
+                option1 : 348,
+                option2 : 290,
+                option3 : 1000,
+                option4 : 735,
+                Correct : 735,
+            },
+            {
+                question: "Which sequence is Fibonacci Sequence?",
+                option1 : '1,1,2,3,5...',
+                option2 : '2,4,6,8,...',
+                option3 : '1,4,16,20,....',
+                option4 : '3,5,7,9,11,...',
+                Correct : '1,1,2,3,5...',
+            }
+        ]
+    </script>
+</body>
+</html>
