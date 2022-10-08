@@ -1,15 +1,11 @@
 let about = document.querySelector("#about"),
 math = document.querySelector("#math"),
-phy = document.querySelector("#phy"),
-history = document.querySelector("#history");
+phy = document.querySelector("#phy");
+// history = document.querySelector("#history");
 
-about.addEventListener('click', changeSection(this, 'section_about'));
-math.addEventListener('click', changeSection(this, 'section_math'));
-phy.addEventListener('click', changeSection(this, 'section_phy'));
-history.addEventListener('click', changeSection(this, 'section_history'));
 
 // Defining a function named 'changeSection'
-function changeSection(evt, SName) {
+function changeSection(element, SName) {
     let tabContent = document.getElementsByClassName('tabContent');
     for(let i=0; i < tabContent.length; i++) {
         tabContent[i].style.display = 'none';
@@ -21,16 +17,27 @@ function changeSection(evt, SName) {
     }
 
     document.getElementById(SName).style.display = 'block';
-    evt.className += " active";
+    element.className += " active";
 
+};
+
+// Iterator to change the questions : 
+function QuizIterator(data) {
+    let index = 0;
+    return {
+        next: function() {
+            if(index < data.length) {
+                let result;
+                result = {value: data[index], done: false};
+                index++;
+                return result;
+            }
+            else {
+                return {value: undefined, done: true};
+            }
+        }
+    }
 }
-
-// let menuItems = document.getElementsByClassName("menu-items");
-// for(let i=0; i < menuItems.length; i++) {
-//     menuItems[i].style.display = "none";
-// }
-
-
 
 // Math's quiz question & answer
 let Math = [
@@ -59,3 +66,63 @@ let Math = [
         Correct : '1,1,2,3,5...',
     }
 ];
+
+let itMath = QuizIterator(Math);
+
+let startMath = document.querySelector("#start_math"),
+main_math = document.querySelector("#main_math"),
+Mquiz = document.querySelector("#Mquiz");
+startMath.addEventListener('click', () => {
+    console.log(`Starting Math Quiz..`);
+    main_math.style.display = 'none';
+    let currentQ = itMath.next().value;
+    Mquiz.innerHTML = `
+    <!-- Quiz Template I mean UI design of Question & options -->
+                <div>
+                    <div class="border shadow-md shadow-gray-900 border-black rounded-sm px-5 my-7 py-4">
+                        <!-- Question -->
+                        <div class="font-semibold"> <span>Q)</span> ${currentQ.question} </div>
+                        <!-- options -->
+                        <div>
+                            <div> <span>1)</span> ${currentQ.option1}</div>
+                            <div> <span>2)</span> ${currentQ.option2}</div>
+                            <div> <span>3)</span> ${currentQ.option3}</div>
+                            <div> <span>4)</span> ${currentQ.option4}</div>
+                        </div>
+                        <!-- Answer input from user -->
+                        <div class="flex space-x-2 my-3">
+                            <input id="" class="border px-1 py-[2px] rounded-lg border-black outline-none"
+                                placeholder="Answer here...">
+                            <button
+                                class="bg-black text-white border font-semibold shadow-lg rounded-lg hover:bg-gray-600 px-2 py-[2px]">Check</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next question -->
+                <div class="flex my-7 justify-center text-xl shadow py-3 shadow-gray-900 space-x-7">
+                    <!-- <div class="font-semibold italic text-red-600">
+                        <div>Congratulations!!</div>
+                    </div>
+                    <button class="bg-black text-white border shadow-lg rounded-lg hover:bg-gray-600 px-2">Next</button> -->
+                    <div class="hidden">Uff Try again !</div>
+                </div>
+    `;
+
+
+
+
+
+
+
+
+
+    // if(currentQ != undefined) {
+    //     console.log(currentQ.question);
+    //     console.log(currentQ.Correct);
+    // }
+    // else {
+    //     alert('You have completed the quiz.');
+    //     window.location.reload();
+    // }
+})

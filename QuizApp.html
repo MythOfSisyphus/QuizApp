@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,26 +10,32 @@
     <script src="https://use.fontawesome.com/7df851cac3.js"></script>
     <style>
         .active {
-             background-color: black;
-             color: white;
+            background-color: black;
+            color: white;
         }
     </style>
 </head>
+
 <body>
     <section class="px-3">
         <!-- Header -->
         <header>
             <!-- Brand Name -->
             <div id="brand">
-                <h1 class="text-3xl font-semibold"><span class="text-red-500">Newton</span><span class="relative text-xl">.net</span></h1>
+                <h1 class="text-3xl shadow shadow-slate-400 font-semibold"><span class="text-red-500">Newton</span><span
+                        class="relative text-xl">.net</span></h1>
             </div>
-    
+
             <!-- Menu items -->
             <div id="menu-item" class="bg-[#cecaca] font-semibold my-5 flex space-x-4">
-                <div id="about" class="menu-items px-2 py-[2px]">About</div>
-                <div id="math" class="menu-items px-2 py-[2px]">Maths</div>
-                <div id="phy" class="menu-items px-2 py-[2px]">Physics</div>
-                <div id="history" class="menu-items px-2 py-[2px]">Historical</div>
+                <div id="about" onclick="changeSection(this, 'section_about')" class="menu-items px-2 py-[2px]">About
+                </div>
+                <div id="math" onclick="changeSection(this, 'section_math')" class="active menu-items px-2 py-[2px]">
+                    Maths</div>
+                <div id="phy" onclick="changeSection(this, 'section_phy')" class="menu-items px-2 py-[2px]">Physics
+                </div>
+                <div id="history" onclick="changeSection(this, 'section_history')" class="menu-items px-2 py-[2px]">
+                    Historical</div>
             </div>
         </header>
 
@@ -38,7 +45,7 @@
             <div>
                 <div class="font-semibold text-lg">About this site:</div>
                 <div>
-                    On <span class="text-red-500 font-semibold">Newton</span><span class="text-sm">.net</span>, 
+                    On <span class="text-red-500 font-semibold">Newton</span><span class="text-sm">.net</span>,
                     we provide some concept refresher type questions of Math, Physics and History specially
                     history questions related to 'History of Math and Science'.
                 </div>
@@ -63,8 +70,30 @@
         </div>
 
         <!-- Maths section -->
-        <div id="section_math" class="tabContent hidden">
-            You're in Math section of the page
+        <div id="section_math" class="tabContent font-semibold">
+            <!-- Main page content -->
+            <div id="main_math">
+                <div>
+                    Maths' section contain simple and refreshing questions,
+                    questions are related to :
+                    <div class="mx-5 text-red-500">
+                        <ul class="list-disc">
+                            <li>Trigonometry</li>
+                            <li>Probablility</li>
+                            <li>Resoning</li>
+                            <li>Early Number Theory</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center my-10">
+                    <button id="start_math"
+                        class="bg-black text-white border font-semibold shadow shadow-slate-900 rounded-lg hover:shadow-slate-200 px-2 py-[2px]">Start
+                        Quiz</button>
+                </div>
+            </div>
+
+            <!-- Quiz questions -->
+            <div class="Mquiz"></div>
         </div>
 
         <!-- Physics' section -->
@@ -76,9 +105,10 @@
         <div id="section_history" class="tabContent hidden">
             You're in History section of the page
         </div>
-        
+
     </section>
 
     <script src="sky.js"></script>
 </body>
+
 </html>
