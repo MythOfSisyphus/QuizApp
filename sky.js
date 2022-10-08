@@ -76,53 +76,37 @@ startMath.addEventListener('click', () => {
     console.log(`Starting Math Quiz..`);
     main_math.style.display = 'none';
     let currentQ = itMath.next().value;
-    Mquiz.innerHTML = `
+    Mquiz.innerHTML += `
     <!-- Quiz Template I mean UI design of Question & options -->
-                <div>
-                    <div class="border shadow-md shadow-gray-900 border-black rounded-sm px-5 my-7 py-4">
-                        <!-- Question -->
-                        <div class="font-semibold"> <span>Q)</span> ${currentQ.question} </div>
-                        <!-- options -->
-                        <div>
-                            <div> <span>1)</span> ${currentQ.option1}</div>
-                            <div> <span>2)</span> ${currentQ.option2}</div>
-                            <div> <span>3)</span> ${currentQ.option3}</div>
-                            <div> <span>4)</span> ${currentQ.option4}</div>
-                        </div>
-                        <!-- Answer input from user -->
-                        <div class="flex space-x-2 my-3">
-                            <input id="" class="border px-1 py-[2px] rounded-lg border-black outline-none"
-                                placeholder="Answer here...">
-                            <button
-                                class="bg-black text-white border font-semibold shadow-lg rounded-lg hover:bg-gray-600 px-2 py-[2px]">Check</button>
-                        </div>
-                    </div>
-                </div>
+    <div>
+        <div class="border shadow-md shadow-gray-900 border-black rounded-sm px-5 my-7 py-4">
+            <!-- Question -->
+            <div class="font-semibold"> <span>Q)</span> ${currentQ.question} </div>
+            <!-- options -->
+            <div>
+                <div> <span>1)</span> ${currentQ.option1}</div>
+                <div> <span>2)</span> ${currentQ.option2}</div>
+                <div> <span>3)</span> ${currentQ.option3}</div>
+                <div> <span>4)</span> ${currentQ.option4}</div>
+            </div>
+            <!-- Answer input from user -->
+            <div class="flex space-x-2 my-3">
+                <input id="Answer" class="border px-1 py-[2px] rounded-lg border-black outline-none"
+                    placeholder="Answer here...">
+                <button id="Check"
+                    class="bg-black text-white border font-semibold shadow-lg rounded-lg hover:bg-gray-600 px-2 py-[2px]">Check</button>
+            </div>
+        </div>
+    </div>
 
-                <!-- Next question -->
-                <div class="flex my-7 justify-center text-xl shadow py-3 shadow-gray-900 space-x-7">
-                    <!-- <div class="font-semibold italic text-red-600">
-                        <div>Congratulations!!</div>
-                    </div>
-                    <button class="bg-black text-white border shadow-lg rounded-lg hover:bg-gray-600 px-2">Next</button> -->
-                    <div class="hidden">Uff Try again !</div>
-                </div>
+    <!-- Next question -->
+    <div class="flex my-7 justify-center text-xl shadow py-3 shadow-gray-900 space-x-7">
+        <div id="CAN" class="hidden">
+            <div class="font-semibold italic text-red-600">Congratulations!!</div>
+            <button class="bg-black text-white border shadow-lg rounded-lg hover:bg-gray-600 px-2">Next</button> 
+        </div>
+        <div id="tryAgain" class="hidden">Uff Try again !</div>
+    </div>
     `;
 
-
-
-
-
-
-
-
-
-    // if(currentQ != undefined) {
-    //     console.log(currentQ.question);
-    //     console.log(currentQ.Correct);
-    // }
-    // else {
-    //     alert('You have completed the quiz.');
-    //     window.location.reload();
-    // }
 })
