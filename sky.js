@@ -3,8 +3,32 @@ math = document.querySelector("#math"),
 phy = document.querySelector("#phy"),
 history = document.querySelector("#history");
 
-let menuItem = document.querySelectorAll(".menu-item");
-console.log(menuItem);
+about.addEventListener('click', changeSection(this, 'section_about'));
+math.addEventListener('click', changeSection(this, 'section_math'));
+phy.addEventListener('click', changeSection(this, 'section_phy'));
+history.addEventListener('click', changeSection(this, 'section_history'));
+
+// Defining a function named 'changeSection'
+function changeSection(evt, SName) {
+    let tabContent = document.getElementsByClassName('tabContent');
+    for(let i=0; i < tabContent.length; i++) {
+        tabContent[i].style.display = 'none';
+    }
+
+    let menuItems = document.getElementsByClassName("menu-items");
+    for(let i=0; i < menuItems.length; i++) {
+        menuItems[i].classList.remove("active");
+    }
+
+    document.getElementById(SName).style.display = 'block';
+    evt.className += " active";
+
+}
+
+// let menuItems = document.getElementsByClassName("menu-items");
+// for(let i=0; i < menuItems.length; i++) {
+//     menuItems[i].style.display = "none";
+// }
 
 
 
