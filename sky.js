@@ -48,3 +48,58 @@ let Math = [
         Correct : '1,1,2,3,5...',
     }
 ];
+
+function QuizIterator(data) {
+    let index = 0;
+    return {
+        next : function() {
+            if(index < data.length) {
+                let result = {value: data[index], done: false};
+                index++;
+                return result;
+            }
+            else {
+                return{value: undefined, done: true};
+            }
+        }
+    }
+}
+
+let itQuiz = QuizIterator(Math);
+// console.log(itQuiz);
+// console.log(itQuiz.next().value);
+let Next =document.querySelector("#Next");
+Next.addEventListener('click', ShowQuiz);
+
+let MathQuizstarter = document.querySelector("#Math_Quiz_starter");
+
+let currentQ = itQuiz.next().value;
+function ShowQuiz() {
+    console.log(`Showing questions`);
+    MathQuizstarter.innerHTML = `
+    <div class="border space-y-2 border-black my-5 mx-2 px-2 py-2 rounded-md">
+    <div>
+        ${currentQ.question}
+    </div>
+    <div class="ml-1">
+        <div>${currentQ.option1}</div>
+        <div>${currentQ.option2}</div>
+        <div>${currentQ.option3}</div>
+        <div>${currentQ.option4}</div>
+    </div>
+    <div>
+        <input id="Answer" placeholder="Answer here..." class="ouline-none border border-black rounded-sm px-2">
+        <button id="Check" class="btn-sm">Check</button>
+    </div>
+</div>
+    `;
+}
+
+let Answer = document.querySelector("#Answer"),
+Check = document.querySelector("#Check");
+Check.addEventListener('click', () => {
+    let s = currentQ.Correct;
+    if(Answer.value == s) {
+        Check.innerHTML = "Congratulations!!";
+    }
+})
