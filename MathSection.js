@@ -23,6 +23,13 @@ let QuestionContainer = document.querySelector("#QuestionContainer"),
 
 let JustOA = document.querySelectorAll(".JustO");
 
+// Feedback
+let congrats = document.querySelector("#congrats"),
+encourage = document.querySelector("#encourage");
+
+let mesg = document.querySelector("#mesg"),
+MainContainer = document.querySelector("#MainContainer");
+
 let index = 0;
 
 let data = Math[index];
@@ -38,7 +45,9 @@ function showQuiz() {
         }
     }
     else {
-        alert(`Done,`);
+        // alert(`Done,`);
+        mesg.classList.remove('hidden');
+        MainContainer.classList.add('hidden');
         index = 0;
     }
 };
@@ -48,6 +57,10 @@ showQuiz();
 submitBtn.addEventListener('click', () => {
     if (Answer.value == data.Correct) {
         console.log("Right!!");
+        congrats.classList.remove('hidden');
+        setTimeout(()=> {
+            congrats.classList.add('hidden');
+        },500)
         Answer.value = "";
         index++;
         showQuiz();
@@ -55,5 +68,9 @@ submitBtn.addEventListener('click', () => {
     else {
         console.log("Try again!!");
         Answer.style.borderColor = "red";
+        encourage.classList.remove('hidden');
+        setTimeout(()=> {
+            encourage.classList.add('hidden');
+        },500)
     }
 })
