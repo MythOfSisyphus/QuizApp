@@ -30,9 +30,9 @@
             <div id="menu-item" class="bg-[#cecaca] font-semibold my-5 flex space-x-4">
                 <div id="about" onclick="changeSection(this, 'section_about')" class="menu-items px-2 py-[2px]">About
                 </div>
-                <div id="math" onclick="changeSection(this, 'section_math')" class="active menu-items px-2 py-[2px]">
+                <div id="math" onclick="changeSection(this, 'section_math')" class="menu-items px-2 py-[2px]">
                     Maths</div>
-                <div id="phy" onclick="changeSection(this, 'section_phy')" class="menu-items px-2 py-[2px]">Physics
+                <div id="phy" onclick="changeSection(this, 'section_phy')" class="active menu-items px-2 py-[2px]">Physics
                 </div>
                 <div id="history" onclick="changeSection(this, 'section_history')" class="menu-items px-2 py-[2px]">
                     Historical</div>
@@ -70,11 +70,11 @@
         </div>
 
         <!-- Maths section -->
-        <div id="section_math" class="tabContent font-semibold">
+        <div id="section_math" class="tabContent hidden font-semibold">
             <!-- Main page content -->
             <div id="main_math">
                 <div>
-                    Maths' section contain simple and refreshing questions,
+                    Maths' section contains simple and refreshing questions,
                     questions are related to :
                     <div class="mx-5 text-red-500">
                         <ul class="list-disc">
@@ -99,8 +99,23 @@
         </div>
 
         <!-- Physics' section -->
-        <div id="section_phy" class="tabContent hidden">
-            You're in Physics section of the page
+        <div id="section_phy" class="tabContent font-semibold">
+            <div class="">
+                As we all know that Physics' is amazing subject, so 
+                this section contains a quiz on : 
+                <div class="text-red-500">
+                    <li>Energy</li>
+                    <li>Machanics</li>
+                    <li>Electricity & Magnetism</li>
+                    <li>Some interesting ones</li>
+                </div>
+                So let us know after having quiz <br> 
+                <span class="text-violet-800">'How do you find it?'</span>
+            </div> 
+            <div class="my-4 text-center space-y-2">
+                <div>Let's get started :</div>
+                <button class="btn-sm border border-white shadow-md shadow-black">Start Quiz</button>
+            </div>
         </div>
 
         <!-- Maths section -->
