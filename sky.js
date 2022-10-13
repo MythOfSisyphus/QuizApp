@@ -19,7 +19,7 @@ function changeSection(element, SName) {
     document.getElementById(SName).style.display = 'block';
     element.className += " active";
 
-};
+}
 
 // Math's quiz question & answer
 let Math = [
