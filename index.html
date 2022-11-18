@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
-    <link rel="stylesheet" href="New.css">
+    <link rel="stylesheet" href="./src/style.css">
     <script src="https://use.fontawesome.com/7df851cac3.js"></script>
     <style>
         .active {
@@ -87,14 +87,13 @@
                     </div>
                 </div>
                 <div class="text-center my-10">
-                    <button id="Math_Quiz_Starter"
+                    <a href="./src/MathSection.html">
+                        <button id="Math_Quiz_Starter"
                         class="bg-black text-white border font-semibold shadow shadow-slate-900 rounded-lg hover:shadow-slate-200 px-2 py-[2px]">Start
                         Quiz</button>
+                    </a>
                 </div>
             </div>
-
-            <!-- Quiz questions -->
-            <div id="Mquiz"></div>
         </div>
 
         <!-- Physics' section -->
@@ -113,8 +112,10 @@
             </div>
             <div class="my-4 text-center space-y-2">
                 <div>Let's get started :</div>
-                <button id="Physics_QUiz_Starter" class="btn-sm border border-white shadow-md shadow-black">Start
-                    Quiz</button>
+                <a href="./src/PhysicsSection.html">
+                    <button id="Physics_QUiz_Starter" class="btn-sm border border-white shadow-md shadow-black">Start
+                        Quiz</button>
+                </a>
             </div>
         </div>
 
@@ -125,7 +126,7 @@
 
     </section>
 
-    <script src="sky.js"></script>
+    <script src="./sky.js"></script>
 </body>
 
 </html>

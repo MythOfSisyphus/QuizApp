@@ -138,7 +138,7 @@ function checkingAnswers(Data) {
 
 
 let url = window.location.href;
-let currentPage = url.split('/')[3]
+let currentPage = url.split('/')[4]
 
 if(currentPage == 'MathSection.html') {
     startQuiz(Math)
