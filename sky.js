@@ -20,14 +20,3 @@ function changeSection(element, SName) {
     element.className += " active";
 
 }
-
-// Quiz Starter
-let Physics_QUiz_Starter = document.querySelector('#Physics_QUiz_Starter')
-Physics_QUiz_Starter.addEventListener('click', () => {
-    location.assign('/PhysicsSection.html')
-})
-
-let Math_Quiz_Starter = document.querySelector('#Math_Quiz_Starter')
-Math_Quiz_Starter.addEventListener('click', () => {
-    location.assign('/MathSection.html')
-})
