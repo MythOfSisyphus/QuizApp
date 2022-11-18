@@ -138,7 +138,7 @@ function checkingAnswers(Data) {
 
 
 let url = window.location.href;
-let currentPage = url.split('/')[4]
+let currentPage = url.split('/')[5]
 
 if(currentPage == 'MathSection.html') {
     startQuiz(Math)
@@ -153,5 +153,5 @@ else if(currentPage == 'PhysicsSection.html') {
 }
 
 else {
-    location.assign('/index.html')
+    location.assign('/QuizApp')
 }
