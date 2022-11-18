@@ -1,8 +1,0 @@
-@tailwind base;
-@tailwind components;
-
-.btn-sm {
-    @apply bg-black text-white px-2 py-1 rounded-md
-}
-
-@tailwind utilities;
