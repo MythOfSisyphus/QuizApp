@@ -151,7 +151,3 @@ else if(currentPage == 'PhysicsSection.html') {
 
     checkingAnswers(PhysicsQuestions)
 }
-
-else {
-    location.assign('/QuizApp')
-}
